@@ -23,9 +23,7 @@ static void loop_cb(void *args) {
 
     mgos_ezo_send_read_cmd(board);
 
-    LOG(LL_INFO, ("BEFORE.."));
-    mgos_usleep(1000000);
-    LOG(LL_INFO, ("AFTER.."));
+    mgos_usleep(600000); // 600 ms processing delay
 
     Ezo_Errors status = mgos_ezo_receive_read_cmd(board);
     float temp_reading = mgos_ezo_get_last_received_reading(board);
